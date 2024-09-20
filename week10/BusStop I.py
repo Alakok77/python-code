@@ -10,7 +10,7 @@ def main():
     for _ in range(station):
         wait = input().split()
         info.append(wait)
-    info.sort(key=lambda x: x[0])
+    info.sort(key= lambda x: int(x[0]))
     for human in info:
         while buses.count(human[0]) > 0:
             buses.remove(human[0])
