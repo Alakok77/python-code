@@ -1,15 +1,19 @@
 """mod doc"""
-def is_prime(i):
-    """check prime"""
-    if i <= 1:
-        return 0
-    for d in (2,3,5,7,11):
-        if not i%d and i not in (2, 3, 5 ,7):
-            return 0 + (is_prime(i - 1))
-    return 1 + is_prime(i - 1)
+def is_prime(number):
+    """doc"""
+    if number == 1:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if not number % i:
+            return False
+    return True
 
 def main():
     """doc"""
     number = int(input())
-    print(is_prime(number))
+    cnt = 0
+    for i in range(1, number + 1):
+        if is_prime(i):
+            cnt += 1
+    print(cnt)
 main()
