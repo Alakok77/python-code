@@ -1,6 +1,5 @@
-t = {"fring" : "sdfg"}
-if "fring" in t:
-    print("yes")
+t = (1, 2)
+def fun(a, b):
+    return a+b
 
-"""mod doc"""
-print("hahaha")
+print(fun(*t))
