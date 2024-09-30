@@ -1,10 +1,10 @@
 """mod doc"""
 num_dict = {0:0, 1:1}
-def fibo(number):
+def fibo(numbers):
     """return fibonancci value"""
-    if number in num_dict:
-        return num_dict[number]
-    result = fibo(number - 1) + fibo(number - 2)
-    num_dict[number] = result
+    if numbers in num_dict:
+        return num_dict[numbers]
+    result = fibo(numbers - 1) + fibo(numbers - 2)
+    num_dict[numbers] = result
     return result
 print(fibo(int(input())))
