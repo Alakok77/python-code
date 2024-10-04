@@ -2,16 +2,16 @@
 def main():
     """doc"""
     txt = f"{input()}0"
-    lst_gram = []
-    for i, j in enumerate(txt):
-        if j == "0":
+    gram = {}
+    for i in range(len(txt) - 1):
+        if i == "0":
             break
-        if f"{j}{txt[i+1]}" not in lst_gram:
-            lst_gram.append(f"{j}{txt[i+1]}")
-    cnt = []
-    for i in lst_gram:
-        cnt.append(txt.count(i))
-    most = lst_gram[cnt.index(max(cnt))]
+        check = f"{txt[i]}{txt[i+1]}"
+        if check not in gram:
+            gram[check] = 1
+        else:
+            gram[check] += 1
+    most = max(gram, key= gram.get)
     print(most)
-    print(max(cnt))
+    print(gram[most])
 main()

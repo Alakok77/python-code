@@ -1,11 +1,9 @@
 """mod doc"""
-def calculate(i):
+def calculate(number):
     """doc"""
-    if i == 0:
-        return 0
-    return len(str(i)) + 1 + calculate(i - 1)
-number = int(input())
-if number == 1:
-    print("1")
-else:
-    print(calculate(number))
+    if not number:
+        return 1
+    if number == 1:
+        return 1
+    return len(str(number)) + 1 + calculate(number - 1)
+print(calculate(int(input())))

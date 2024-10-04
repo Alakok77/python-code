@@ -6,11 +6,10 @@ def main():
     for i, j in enumerate(num):
         if j == "0":
             break
-        if int(j) + int(num[i+1]) == 10:
-            cnt += 1
-        elif int(j) + int(num[i+1]) + int(num[i+2]) == 10:
-            cnt += 1
-        elif int(j) + int(num[i+1]) + int(num[i+2]) + int(num[i+3]) == 10:
+        cond1 = int(j) + int(num[i + 1])
+        cond2 = cond1 + int(num[i + 2])
+        cond3 = cond2 + int(num[i + 3])
+        if 10 in (cond1, cond2, cond3):
             cnt += 1
     print(cnt)
 main()
